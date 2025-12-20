@@ -1,0 +1,79 @@
+const questions = [
+  { q: "Depreciation means:", options: ["Increase in value", "Decrease in value of asset", "Maintenance cost", "Profit"], answer: 1 },
+  { q: "Depreciation is charged on:", options: ["Current assets", "Fixed assets", "Investments", "Stock"], answer: 1 },
+  { q: "Main cause of depreciation is:", options: ["Profit", "Use of asset", "Capital", "Sales"], answer: 1 },
+  { q: "Depreciation is a:", options: ["Capital expense", "Revenue expense", "Loss", "Asset"], answer: 1 },
+  { q: "Depreciation is charged to:", options: ["Balance Sheet", "Profit & Loss A/c", "Cash Book", "Capital A/c"], answer: 1 },
+
+  { q: "Depreciation provides:", options: ["Cash", "Funds", "Replacement of asset", "Income"], answer: 2 },
+  { q: "Depreciation is charged even if:", options: ["Profit", "Loss", "No use", "Asset sold"], answer: 1 },
+  { q: "Depreciation is based on:", options: ["Cost concept", "Matching concept", "Consistency", "Dual aspect"], answer: 1 },
+  { q: "Wear and tear is due to:", options: ["Time", "Use", "Obsolescence", "Accident"], answer: 1 },
+  { q: "Obsolescence occurs due to:", options: ["New technology", "Use", "Time", "Accident"], answer: 0 },
+
+  { q: "Depreciation does not involve:", options: ["Expense", "Cash outflow", "Value decrease", "Cost allocation"], answer: 1 },
+  { q: "Depreciation is calculated on:", options: ["Market value", "Cost of asset", "Selling price", "Book value only"], answer: 1 },
+  { q: "Straight Line Method charges depreciation on:", options: ["Original cost", "Written down value", "Market value", "Scrap value"], answer: 0 },
+  { q: "Written Down Value Method charges depreciation on:", options: ["Original cost", "Book value", "Scrap value", "Market value"], answer: 1 },
+  { q: "Depreciation under SLM is:", options: ["Increasing", "Decreasing", "Equal every year", "Unequal"], answer: 2 },
+
+  { q: "Depreciation under WDV is:", options: ["Equal", "Increasing", "Decreasing", "Nil"], answer: 2 },
+  { q: "Scrap value means:", options: ["Cost", "Selling price", "Residual value", "Profit"], answer: 2 },
+  { q: "Useful life of asset means:", options: ["Total life", "Working life", "Scrap life", "Idle life"], answer: 1 },
+  { q: "Depreciation is provided till:", options: ["Asset sold", "Asset scrapped", "End of useful life", "All of these"], answer: 3 },
+  { q: "Depreciation is shown in Balance Sheet as:", options: ["Asset", "Liability", "Deduction from asset", "Income"], answer: 2 },
+
+  { q: "Accumulated depreciation is shown on:", options: ["Asset side", "Liability side", "Income side", "Capital side"], answer: 0 },
+  { q: "Depreciation account is a:", options: ["Real account", "Nominal account", "Personal account", "Capital account"], answer: 1 },
+  { q: "Provision for depreciation is created to:", options: ["Show profit", "Replace asset", "Reduce tax", "Increase capital"], answer: 1 },
+  { q: "Provision for depreciation appears on:", options: ["Asset side", "Liability side", "Income side", "Expense side"], answer: 1 },
+  { q: "Change in method of depreciation is based on:", options: ["Prudence", "Consistency", "Matching", "Materiality"], answer: 1 },
+
+  { q: "Depreciation is charged from:", options: ["Date of purchase", "Beginning of year", "End of year", "Date of use"], answer: 3 },
+  { q: "Depreciation is not charged on:", options: ["Land", "Machinery", "Furniture", "Building"], answer: 0 },
+  { q: "Depreciation is a non-cash expense because:", options: ["No fund", "No cash payment", "No asset", "No profit"], answer: 1 },
+  { q: "Depreciation helps in:", options: ["Asset replacement", "Capital formation", "Profit calculation", "All of these"], answer: 3 },
+  { q: "Depreciation is charged to:", options: ["Find true profit", "Increase asset value", "Reduce liability", "Show income"], answer: 0 },
+
+  { q: "Depreciation depends upon:", options: ["Cost", "Useful life", "Scrap value", "All of these"], answer: 3 },
+  { q: "When asset is sold, depreciation is charged till:", options: ["Beginning", "Date of sale", "End of year", "Not charged"], answer: 1 },
+  { q: "Depreciation under WDV is high in:", options: ["First year", "Last year", "Middle year", "Equal"], answer: 0 },
+  { q: "SLM is suitable for:", options: ["Machinery", "Buildings", "Vehicles", "All assets"], answer: 1 },
+  { q: "WDV method is suitable for:", options: ["Land", "Machinery", "Goodwill", "Investment"], answer: 1 },
+
+  { q: "Depreciation reduces:", options: ["Profit", "Asset value", "Capital", "All of these"], answer: 3 },
+  { q: "Depreciation account is closed to:", options: ["Balance Sheet", "Profit & Loss A/c", "Capital A/c", "Cash A/c"], answer: 1 },
+  { q: "Depreciation is a charge against:", options: ["Capital", "Profit", "Asset", "Liability"], answer: 1 },
+  { q: "Depreciation is provided due to:", options: ["Wear & tear", "Obsolescence", "Time", "All of these"], answer: 3 },
+  { q: "If depreciation is not charged, profit will be:", options: ["Overstated", "Understated", "Correct", "Nil"], answer: 0 },
+
+  { q: "Depreciation ensures:", options: ["Capital maintenance", "Income generation", "Expense control", "Sales increase"], answer: 0 },
+  { q: "Depreciation does not depend on:", options: ["Cost", "Market price", "Useful life", "Scrap value"], answer: 1 },
+  { q: "Depreciation is an allocation of:", options: ["Value", "Cost", "Profit", "Income"], answer: 1 },
+  { q: "Depreciation charged annually is:", options: ["Provision", "Expense", "Reserve", "Liability"], answer: 1 },
+  { q: "Depreciation charged in first year on asset bought mid-year is:", options: ["Full", "Half", "Nil", "Double"], answer: 1 },
+
+  { q: "Depreciation is compulsory as per:", options: ["Companies Act", "Accounting principles", "Tax law", "Bank rules"], answer: 1 },
+  { q: "Provision for depreciation reduces:", options: ["Asset value", "Liability", "Capital", "Income"], answer: 0 },
+  { q: "Depreciation is not a source of:", options: ["Fund", "Cash", "Expense", "Cost allocation"], answer: 1 },
+  { q: "Written down value means:", options: ["Original cost", "Cost minus depreciation", "Market value", "Selling price"], answer: 1 },
+  { q: "Depreciation on addition to asset is charged from:", options: ["Purchase date", "Year end", "Beginning", "Never"], answer: 0 },
+
+  { q: "Depreciation is charged even if asset is:", options: ["Idle", "Used", "Sold", "Scrapped"], answer: 0 },
+  { q: "Depreciation ensures true and fair view of:", options: ["Profit", "Asset value", "Capital", "All of these"], answer: 3 },
+  { q: "Depreciation reduces taxable:", options: ["Sales", "Profit", "Assets", "Capital"], answer: 1 },
+  { q: "Rate of depreciation under SLM is calculated on:", options: ["Cost", "WDV", "Scrap value", "Market value"], answer: 0 },
+  { q: "Depreciation under WDV never makes asset value:", options: ["Zero", "Negative", "Scrap", "Nil"], answer: 0 },
+
+  { q: "Depreciation is shown on asset side as:", options: ["Addition", "Deduction", "Reserve", "Income"], answer: 1 },
+  { q: "Depreciation helps in replacement of asset by:", options: ["Saving profit", "Charging cost", "Creating fund", "Selling asset"], answer: 1 },
+  { q: "Depreciation is an example of:", options: ["Cash expense", "Non-cash expense", "Capital receipt", "Revenue receipt"], answer: 1 },
+  { q: "Depreciation does not increase:", options: ["Expense", "Profit", "Loss", "Cost"], answer: 1 },
+  { q: "Main objective of charging depreciation is:", options: ["Profit reduction", "Asset valuation", "Capital safety", "All of these"], answer: 3 },
+
+  { q: "Depreciation is related to:", options: ["Past", "Present", "Future", "All periods"], answer: 3 },
+  { q: "If asset is fully depreciated, depreciation is:", options: ["Stopped", "Continued", "Doubled", "Ignored"], answer: 0 },
+  { q: "Depreciation is charged as per:", options: ["Owner wish", "Accounting standards", "Bank rules", "Auditor wish"], answer: 1 },
+  { q: "Depreciation is necessary for:", options: ["Profit calculation", "Capital maintenance", "Asset replacement", "All of these"], answer: 3 },
+  { q: "Depreciation does not depend on:", options: ["Use", "Time", "Market demand", "Technology"], answer: 2 }
+];
