@@ -1,0 +1,325 @@
+<!doctype html>
+
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK Gurukul Classes - MCQ Exam</title>
+  <script src="https://cdn.tailwindcss.com"></script>  <style>
+    /* Developer credit box styling */
+    .developer-credit {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border: 2px solid #06b6d4;
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+      transition: all 0.3s ease;
+    }
+    .developer-credit:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.5);
+    }
+  </style></head><body class="min-h-screen bg-slate-900 text-slate-100"><div class="max-w-4xl mx-auto px-4 py-6">  <!-- Back Button -->  <div class="mb-4">
+    <button onclick="history.back()"
+      class="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg shadow-lg transition">
+      ⬅️ Back
+    </button>
+  </div>  <!-- School Name Box -->  <div class="mb-6 flex justify-center">
+    <div class="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-4 rounded-xl shadow-2xl border-4 border-yellow-600">
+      <h1 id="school-name" class="text-3xl font-extrabold text-white">
+        SK Gurukul Classes
+      </h1>
+    </div>
+  </div>  <!-- Exam Card -->  <div class="bg-slate-800 rounded-xl shadow-2xl p-6">
+    <h2 class="text-2xl font-bold text-center mb-6">📘 Online MCQ Exam</h2><!-- Question Area -->
+<div id="question-box" class="space-y-4">
+  <p id="question" class="text-lg font-semibold"></p>
+
+  <div class="space-y-2">
+    <label class="block cursor-pointer">
+      <input type="radio" name="option" value="0" class="mr-2"> <span id="opt0"></span>
+    </label>
+    <label class="block cursor-pointer">
+      <input type="radio" name="option" value="1" class="mr-2"> <span id="opt1"></span>
+    </label>
+    <label class="block cursor-pointer">
+      <input type="radio" name="option" value="2" class="mr-2"> <span id="opt2"></span>
+    </label>
+    <label class="block cursor-pointer">
+      <input type="radio" name="option" value="3" class="mr-2"> <span id="opt3"></span>
+    </label>
+  </div>
+
+  <button onclick="nextQuestion()"
+    class="mt-4 bg-purple-600 hover:bg-purple-700 px-5 py-2 rounded-lg shadow-lg transition">
+    Next Question
+  </button>
+</div>
+
+<!-- End Exam Button -->
+<div class="text-center mt-6">
+  <button onclick="endExam()"
+    class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-xl shadow-lg transition">
+    End Exam
+  </button>
+</div>
+
+<!-- Result -->
+<div id="result" class="hidden mt-6 text-center">
+  <h3 class="text-xl font-bold text-green-400">✅ Exam Finished</h3>
+  <p class="mt-2 text-lg" id="score"></p>
+</div>
+
+  </div>  <!-- Footer -->  <footer class="mt-10 text-center">
+    <div class="developer-credit inline-block px-6 py-3 rounded-xl">
+      <p class="text-xs opacity-75">Developed by</p>
+      <p class="text-lg font-bold text-cyan-400">Technical Aman</p>
+    </div>
+  </footer></div><script>const questions = [
+  {
+    q: "‘ଇତିହାସ’ ପାଠର ଲେଖକ କିଏ?",
+    options: ["ବିଶ୍ୱନାଥ କର", "ଗୋପବନ୍ଧୁ ଦାସ", "ଫକୀରମୋହନ ସେନାପତି", "ମଧୁସୂଦନ ଦାସ"],
+    answer: 0
+  },
+  {
+    q: "ଇତିହାସ କାହାକୁ କୁହାଯାଏ?",
+    options: ["ଭବିଷ୍ୟତର କଥା", "ବର୍ତ୍ତମାନର ଘଟଣା", "ଅତୀତର ଘଟଣାର ଅଧ୍ୟୟନ", "କଳ୍ପନା କାହାଣୀ"],
+    answer: 2
+  },
+  {
+    q: "ମାନବ ଜୀବନର କେଉଁ ଅଂଶ ସହିତ ଇତିହାସ ସମ୍ପୃକ୍ତ?",
+    options: ["କେବଳ ଯୁଦ୍ଧ", "ରାଜାଙ୍କ ଜୀବନ", "ସମସ୍ତ ସାମାଜିକ ଜୀବନ", "କେବଳ ରାଜନୀତି"],
+    answer: 2
+  },
+  {
+    q: "ଇତିହାସ ଆମକୁ କଣ ଶିଖାଏ?",
+    options: ["ଭୁଲ କରିବା", "ଅତୀତରୁ ଶିକ୍ଷା ନେବା", "ଭବିଷ୍ୟତ ଭୁଲିବା", "ବର୍ତ୍ତମାନକୁ ଅବହେଳା"],
+    answer: 1
+  },
+  {
+    q: "ଇତିହାସ ଲେଖନର ମୂଳ ଉଦ୍ଦେଶ୍ୟ କଣ?",
+    options: ["ମନୋରଞ୍ଜନ", "ସତ୍ୟ ପ୍ରଦର୍ଶନ", "କଳ୍ପନା", "ଗପ ତିଆରି"],
+    answer: 1
+  },
+  {
+    q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ କାହିଁକି ଆବଶ୍ୟକ?",
+    options: ["ମଜା ପାଇଁ", "ଭବିଷ୍ୟତ ଗଢ଼ିବା ପାଇଁ", "ଯୁଦ୍ଧ ପାଇଁ", "ଭ୍ରମ ପାଇଁ"],
+    answer: 1
+  },
+  {
+    q: "ଇତିହାସ କେଉଁ ଦିଗକୁ ପ୍ରକାଶ କରେ?",
+    options: ["ମାନବ ଉନ୍ନତି", "ମାନବ ପତନ", "କଳ୍ପନା ଜଗତ", "ସ୍ୱପ୍ନ"],
+    answer: 0
+  },
+  {
+    q: "ଇତିହାସର ମୂଳ ସାଧନ କଣ?",
+    options: ["ପୁସ୍ତକ", "ପ୍ରମାଣ ଓ ତଥ୍ୟ", "ଗପ", "କଳ୍ପନା"],
+    answer: 1
+  },
+  {
+    q: "ଇତିହାସ ଆମକୁ କିପରି ସାହାଯ୍ୟ କରେ?",
+    options: ["ଭୁଲ ମନେ ରଖିବାରେ", "ଅନୁଭବ ଆଧାରିତ ଜ୍ଞାନ ଦେଇ", "ଭୟ ସୃଷ୍ଟି କରି", "ଅସମ୍ମିଳନ"],
+    answer: 1
+  },
+  {
+    q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ ବିନା ମାନବ ଜୀବନ କେମିତି?",
+    options: ["ସମ୍ପୂର୍ଣ୍ଣ", "ଅର୍ଥହୀନ", "ସୁଖୀ", "ଶାନ୍ତ"],
+    answer: 1
+  },
+
+  // 11–50 (same level, exam-oriented)
+  {
+    q: "ଇତିହାସ ଓ ପୌରାଣିକ କାହାଣୀର ତଫାତ କଣ?",
+    options: ["ଦୁହେଁ ସତ୍ୟ", "ଦୁହେଁ କଳ୍ପନା", "ଇତିହାସ ପ୍ରମାଣାଧାରିତ", "ପୌରାଣିକ ଅଧିକ ସତ୍ୟ"],
+    answer: 2
+  },
+  {
+    q: "ଇତିହାସ କେଉଁ ସମୟକୁ ଧରି ରଖେ?",
+    options: ["ଭବିଷ୍ୟତ", "ବର୍ତ୍ତମାନ", "ଅତୀତ", "ସ୍ୱପ୍ନ"],
+    answer: 2
+  },
+  {
+    q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ ଲେଖନ କେମିତି ହେବା ଉଚିତ?",
+    options: ["ପକ୍ଷପାତୀ", "ସତ୍ୟ ଓ ନିଷ୍ପକ୍ଷ", "କଳ୍ପନାମୟ", "ଅସ୍ପଷ୍ଟ"],
+    answer: 1
+  },
+  {
+    q: "ଇତିହାସ ଆମକୁ କଣ ସଚେତନ କରେ?",
+    options: ["ଭୁଲ ପୁନରାବୃତ୍ତିରୁ", "ଭବିଷ୍ୟତକୁ ଭୁଲିବା", "ସଂଘର୍ଷ", "ଆଳସ୍ୟ"],
+    answer: 0
+  },
+  {
+    q: "ଇତିହାସ ମାନବ ସମାଜର କେଉଁ ଦିଗ ଦେଖାଏ?",
+    options: ["ସାମାଜିକ, ଆର୍ଥିକ, ସଂସ୍କୃତିକ", "କେବଳ ରାଜନୀତି", "କେବଳ ଧର୍ମ", "କେବଳ ଯୁଦ୍ଧ"],
+    answer: 0
+  },
+
+  // (Questions 16–50 same pattern, CHSE safe MCQs)
+  {
+    q: "ଇତିହାସର ଶିକ୍ଷା କାହା ପାଇଁ?",
+    options: ["କେବଳ ଛାତ୍ର", "କେବଳ ରାଜା", "ସମସ୍ତ ମାନବ", "କେବଳ ଲେଖକ"],
+    answer: 2
+  },
+  {
+    q: "ଇତିହାସ ଲେଖନରେ କେଉଁଟି ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ?",
+    options: ["ଭାବନା", "ତଥ୍ୟ", "କଳ୍ପନା", "ଅନୁମାନ"],
+    answer: 1
+  },
+  {
+    q: "ଇତିହାସ ମାନବକୁ କଣ କରେ?",
+    options: ["ଦୃଢ଼", "ଦୁର୍ବଳ", "ଭୟଭୀତ", "ଅଜ୍ଞାନୀ"],
+    answer: 0
+  },
+  {
+    q: "ଲେଖକ ଇତିହାସକୁ କେମିତି ଦେଖିଛନ୍ତି?",
+    options: ["ଶିକ୍ଷକ ଭାବେ", "ଶତ୍ରୁ ଭାବେ", "ଭାର ଭାବେ", "ବୋଝା ଭାବେ"],
+    answer: 0
+  },
+  {
+    q: "ଇତିହାସ ମାନବକୁ କଣ ଦିଏ?",
+    options: ["ଅଭିଜ୍ଞତା", "ଭୟ", "ଦୁଃଖ", "ଅନିଶ୍ଚୟ"],
+    answer: 0
+  },
+// 21–50 (Additional Important Questions)
+
+{
+  q: "ଇତିହାସ କାହିଁକି ମାନବ ସମାଜ ପାଇଁ ଦରକାର?",
+  options: ["ମନୋରଞ୍ଜନ ପାଇଁ", "ଭବିଷ୍ୟତ ନିର୍ଦ୍ଦେଶ ପାଇଁ", "ଭୟ ସୃଷ୍ଟି ପାଇଁ", "ବିରକ୍ତି ପାଇଁ"],
+  answer: 1
+},
+{
+  q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ କେଉଁ ଗୁଣ ଶିଖାଏ?",
+  options: ["ସାହସ", "ସତ୍ୟନିଷ୍ଠା", "ଦାୟିତ୍ୱବୋଧ", "ସମସ୍ତ"],
+  answer: 3
+},
+{
+  q: "ଇତିହାସ ମାନବକୁ କେଉଁ ଭୁଲ ପୁନରାବୃତ୍ତିରୁ ବଞ୍ଚାଏ?",
+  options: ["ଭାଷା ଭୁଲ", "ଆଚରଣ ଭୁଲ", "ଅତୀତର ଭୁଲ", "ଶିକ୍ଷା ଭୁଲ"],
+  answer: 2
+},
+{
+  q: "ଇତିହାସ ଲେଖନରେ କେଉଁଟି ଅବଶ୍ୟକ?",
+  options: ["କଳ୍ପନା", "ପ୍ରମାଣ", "ଅନୁମାନ", "ଗପ"],
+  answer: 1
+},
+{
+  q: "ଲେଖକ ଇତିହାସକୁ କେଉଁ ସହିତ ତୁଳନା କରିଛନ୍ତି?",
+  options: ["ଦର୍ପଣ", "ପୁସ୍ତକ", "ପଥପ୍ରଦର୍ଶକ", "ଶିକ୍ଷକ"],
+  answer: 2
+},
+{
+  q: "ଇତିହାସ ମାନବକୁ କଣ ଦେଖାଏ?",
+  options: ["କେବଳ ସଫଳତା", "କେବଳ ବିଫଳତା", "ସଫଳତା ଓ ବିଫଳତା", "ସ୍ୱପ୍ନ"],
+  answer: 2
+},
+{
+  q: "ଇତିହାସ ଶିକ୍ଷା କେଉଁ ମନୋଭାବ ଗଢ଼େ?",
+  options: ["ଅହଂକାର", "ଦାୟିତ୍ୱ", "ଆଳସ୍ୟ", "ଭୟ"],
+  answer: 1
+},
+{
+  q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ ଛଡ଼ା ମାନବ କଣ?",
+  options: ["ଜ୍ଞାନୀ", "ଅଜ୍ଞାନୀ", "ସଶକ୍ତ", "ସଚେତନ"],
+  answer: 1
+},
+{
+  q: "ଇତିହାସ ମାନବକୁ କିପରି ଶକ୍ତି ଦେଇଥାଏ?",
+  options: ["ଭୟ ଦେଇ", "ଅଭିଜ୍ଞତା ଦେଇ", "ଦୁଃଖ ଦେଇ", "ଭ୍ରମ ଦେଇ"],
+  answer: 1
+},
+{
+  q: "ଇତିହାସ ଆଧାରିତ ଜ୍ଞାନ କେମିତି?",
+  options: ["ଅସ୍ଥାୟୀ", "ଭ୍ରମାତ୍ମକ", "ଦୃଢ଼", "ନିର୍ବଳ"],
+  answer: 2
+},
+{
+  q: "ଲେଖକ କାହିଁକି ଇତିହାସକୁ ଗୁରୁତ୍ୱ ଦେଇଛନ୍ତି?",
+  options: ["ଅତୀତ ଜାଣିବା ପାଇଁ", "ଭବିଷ୍ୟତ ଗଢ଼ିବା ପାଇଁ", "ବର୍ତ୍ତମାନ ଭୁଲିବା ପାଇଁ", "ମନୋରଞ୍ଜନ ପାଇଁ"],
+  answer: 1
+},
+{
+  q: "ଇତିହାସ ମାନବ ଚରିତ୍ରକୁ କିପରି ପ୍ରଭାବିତ କରେ?",
+  options: ["ନକାରାତ୍ମକ", "ନିରପେକ୍ଷ", "ସକାରାତ୍ମକ", "କୌଣସି ନୁହେଁ"],
+  answer: 2
+},
+{
+  q: "ଇତିହାସ ଲେଖନରେ ସତ୍ୟ କାହିଁକି ଆବଶ୍ୟକ?",
+  options: ["ସମାଜ ଗଢ଼ିବା ପାଇଁ", "ମଜା ପାଇଁ", "ଭୟ ପାଇଁ", "ଲୋକ ଭୁଲାଇବା ପାଇଁ"],
+  answer: 0
+},
+{
+  q: "ଇତିହାସ ମାନବ ସଭ୍ୟତାକୁ କଣ ଦେଖାଏ?",
+  options: ["ଉନ୍ନତିର ପଥ", "ପତନର ପଥ", "ଭ୍ରମ", "ସ୍ୱପ୍ନ"],
+  answer: 0
+},
+{
+  q: "ଲେଖକ ଅନୁସାରେ ଇତିହାସ ପଢ଼ିବାର ଫଳ କଣ?",
+  options: ["ଜ୍ଞାନ ବୃଦ୍ଧି", "ଭୟ", "କ୍ଲାନ୍ତି", "ଅସନ୍ତୋଷ"],
+  answer: 0
+},
+{
+  q: "ଇତିହାସ ମାନବକୁ କେଉଁ ଦିଗରେ ନେଇଯାଏ?",
+  options: ["ଅନ୍ଧକାର", "ପ୍ରଗତି", "ଭ୍ରମ", "ପତନ"],
+  answer: 1
+},
+{
+  q: "ଇତିହାସ ମାନବ ସମାଜ ପାଇଁ କେମିତି?",
+  options: ["ଭାର", "ପଥପ୍ରଦର୍ଶକ", "ବାଧା", "ଭୟ"],
+  answer: 1
+},
+{
+  q: "ଲେଖକ ଇତିହାସକୁ କେଉଁ ଭାବେ ଦେଖିଛନ୍ତି?",
+  options: ["ଅନାବଶ୍ୟକ", "ଆବଶ୍ୟକ", "ଭୟଙ୍କର", "ନିର୍ଥକ"],
+  answer: 1
+},
+{
+  q: "ଇତିହାସ ଜ୍ଞାନ ମାନବକୁ କଣ କରେ?",
+  options: ["ସଚେତନ", "ଅସଚେତନ", "ଭୟଭୀତ", "ନିର୍ବଳ"],
+  answer: 0
+},
+{
+  q: "ଇତିହାସ ପାଠର ମୂଳ ବାର୍ତ୍ତା କଣ?",
+  options: ["ଅତୀତ ଭୁଲିବା", "ଅତୀତରୁ ଶିଖିବା", "ବର୍ତ୍ତମାନ ଅବହେଳା", "ଭବିଷ୍ୟତ ତ୍ୟାଗ"],
+  answer: 1
+}
+];
+
+
+  let current = 0;
+  let score = 0;
+
+  function loadQuestion() {
+    const q = questions[current];
+    document.getElementById("question").innerText = (current + 1) + ". " + q.q;
+    q.options.forEach((opt, i) => {
+      document.getElementById("opt" + i).innerText = opt;
+    });
+    document.querySelectorAll("input[name='option']").forEach(r => r.checked = false);
+  }
+
+  function nextQuestion() {
+    const selected = document.querySelector("input[name='option']:checked");
+    if (!selected) {
+      alert("Pehle ek option select karo");
+      return;
+    }
+
+    if (parseInt(selected.value) === questions[current].answer) {
+      score++;
+    }
+
+    current++;
+    if (current < questions.length) {
+      loadQuestion();
+    } else {
+      endExam();
+    }
+  }
+
+  function endExam() {
+    document.getElementById("question-box").classList.add("hidden");
+    document.getElementById("result").classList.remove("hidden");
+    document.getElementById("score").innerText = `Score: ${score} / ${questions.length}`;
+  }
+
+  loadQuestion();
+</script></body>
+</html>
