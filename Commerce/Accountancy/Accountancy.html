@@ -135,12 +135,18 @@
         <div class="min-h-full px-6 py-10">
             <!-- Header Section with Logo and School Name -->
             <header class="text-center mb-10">
-                <!-- Back Button - Top Left -->
-                <div class="mb-6 flex justify-start">
-                    <a href="index.html" class="back-btn px-6 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 shadow-lg">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg><span>Back</span> </a>
-                </div>
+              <!-- Back Button - Previous Page -->
+<div class="mb-6 flex justify-start">
+  <button onclick="history.back()"
+    class="back-btn px-6 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 shadow-lg">
+    
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    <span>Back</span>
+  </button>
+</div>
                 <!-- Logo - Round profile image -->
                 <div class="mb-4 flex justify-center">
                     <img src="logo.png" alt="SK Gurukul Classes Logo" class="logo-img" onerror="this.src=''; this.alt='Logo not found'; this.style.display='none';">
