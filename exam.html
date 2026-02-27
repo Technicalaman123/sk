@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sania's Full Teamwork Exam 🧪</title>
+<title>bhai chara Full Teamwork Exam 🧪</title>
 <style>
     body { font-family: 'Segoe UI', Arial, sans-serif; padding: 20px; background: linear-gradient(135deg, #fff5f7, #fce4ec); color: #4b2c20; }
     .container { max-width: 850px; margin: auto; background: white; padding: 30px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
@@ -22,10 +22,10 @@
 
 <div class="container">
     <h2>🧪 Teamwork Science Lab</h2>
-    <p class="intro-msg">Focus Sania! Har ek sawal teamwork ke liye important hai. 🐻✨</p>
+    <p class="intro-msg">Focus bhaiyo ! Har ek sawal teamwork ke liye important hai. 🐻✨</p>
 
     <div id="startScreen">
-        <input type="text" id="name" placeholder="Enter Your Name, Scientist Sania">
+        <input type="text" id="name" placeholder="Enter Your Name, commerce bhaiyo">
         <button onclick="startExam()">Launch Experiment 🚀</button>
     </div>
 
@@ -43,85 +43,65 @@ let studentName = "";
 
 // Full Answer Key mapped from your image
 const answers = {
-    1:"B", 2:"C", 3:"C", 4:"C", 5:"D", 6:"C", 7:"B", 8:"D", 9:"C", 10:"D",
-    11:"B", 12:"B", 13:"D", 14:"C", 15:"C", 16:"B", 17:"C", 18:"C", 19:"D", 20:"B",
-    21:"A", 22:"C", 23:"D", 24:"D", 25:"B", 26:"A", 27:"C", 28:"A", 29:"B", 30:"D",
-    31:"D", 32:"A", 33:"B", 34:"C", 35:"A", 36:"B", 37:"B", 38:"A", 39:"C", 40:"B",
-    41:"B", 42:"A", 43:"C", 44:"D", 45:"B", 46:"B", 47:"C", 48:"B", 49:"D", 50:"C",
-    51:"B", 52:"A", 53:"B", 54:"D", 55:"B", 56:"A", 57:"C", 58:"C", 59:"D", 60:"B",
-    61:"C", 62:"B", 63:"C", 64:"C", 65:"D", 66:"D", 67:"B"
+    1:"B", 2:"A", 3:"B", 4:"C", 5:"D", 6:"B", 7:"D", 8:"D", 9:"D", 10:"B",
+    11:"B", 12:"A", 13:"A", 14:"B", 15:"A", 16:"D", 17:"B", 18:"B", 19:"B", 20:"C",
+    21:"D", 22:"C", 23:"D", 24:"C", 25:"D", 26:"A", 27:"C", 28:"B", 29:"C", 30:"C",
+    31:"B", 32:"A", 33:"D", 34:"B", 35:"D", 36:"B", 37:"C", 38:"C", 39:"A", 40:"C",
+    41:"D", 42:"A", 43:"B", 44:"A", 45:"D", 46:"D", 47:"A", 48:"A", 49:"A", 50:"D"
 };
 
 // Full Question Set from provided images
 const questionData = [
-    {q: "Lack of team-work in India is –", opts: ["A. manageable", "B. almost chronic", "C. nothing", "D. none of these"]},
-    {q: "That one Indian was equal to 10 Japanese was –", opts: ["A. true", "B. partially true", "C. a myth", "D. all of these"]},
-    {q: "‘Carb’ mentality refers to –", opts: ["A. slothness", "B. feudal mind-set", "C. state of pulling the legs of an efficient out of envy", "D. lunacy"]},
-    {q: "India inherits a social system characterized by –", opts: ["A. education", "B. casteism", "C. feudalism and hierarchy", "D. none of these"]},
-    {q: "Modern society needs –", opts: ["A. experience", "B. erudition", "C. technical knowledge", "D. specialists or experts"]},
-    {q: "America is an object of the writer's –", opts: ["A. scorn", "B. envy", "C. appreciation", "D. none of these"]},
-    {q: "What counts most in group work is —", opts: ["A. hierarchy", "B. a keen insight into the merits and demerits of individuals", "C. cultural background", "D. education"]},
-    {q: "A good team player knows no —", opts: ["A. affluence", "B. vanity", "C. flattery", "D. both (B) and (C)"]},
-    {q: "Achieving total agreement is —", opts: ["A. probable", "B. certain", "C. impossible", "D. none of these"]},
-    {q: "A good work culture calls for —", opts: ["A. a little co-operation", "B. efficiency", "C. willingness to go ahead", "D. affinity between words and deeds"]},
-    {q: "What comes naturally to our mind when we are assigned a task together?", opts: ["A. Conflicting interest", "B. Hierarchy", "C. Teamwork", "D. Sharing of responsibility"]},
-    {q: "What is 'split level consciousness'?", opts: ["A. To exhibit hidden agenda", "B. To say something and mean the opposite", "C. To possess political agenda", "D. To exhibit bossism"]},
-    {q: "Who is a good team player?", opts: ["A. implementations of political agendas", "B. possesses crab mentality", "C. respect to others/resolving conflicts", "D. Who believes in bossism"]},
-    {q: "Which is important for beginning a piece of work?", opts: ["A. hidden agenda", "B. complete work at any cost", "C. begin forthwith on agreed aspects", "D. wait for total agreement"]},
-    {q: "How does 'diversifying task' affect workers?", opts: ["A. hurdles", "B. adversely affect zeal", "C. increases self-esteem and motivation", "D. none"]},
-    {q: "What the writer likes is —", opts: ["A. shifting tasks", "B. diversification of tasks", "C. proper handling", "D. none"]},
-    {q: "To build teams in our system is —", opts: ["A. imperative", "B. unwarranted", "C. herculean", "D. both A and B"]},
-    {q: "In India, it is very difficult to trace out —", opts: ["A. good players", "B. favourable groups", "C. good losers", "D. none"]},
-    {q: "A senior position needs —", opts: ["A. experience", "B. work ethic", "C. scholarship", "D. capability"]},
-    {q: "The writer always gives priority to —", opts: ["A. competence", "B. teamwork", "C. self-esteem", "D. criticism"]},
-    {q: "Pressure is —", opts: ["A. a blessing in disguise", "B. an obstacle", "C. object of fear", "D. none"]},
-    {q: "Team interactions always fall apart when:", opts: ["A. teams are not good", "B. ineffective work", "C. good teams do get created", "D. not reliable"]},
-    {q: "There is no substitute for :", opts: ["A. human empowerment", "B. work force", "C. management", "D. teamwork"]},
-    {q: "Expression 'playing second fiddle' means:", opts: ["A. second chance", "B. second status", "C. second rate importance", "D. sub-ordinate position"]},
-    {q: "The larger goal of the team as a whole is :", opts: ["A. objectives fulfilment", "B. above individual agendas", "C. above duties", "D. all-out effort"]},
-    {q: "Who is the Author of 'The Magic of Teamwork'?", opts: ["A. Sam Pitroda", "B. Hariharan B.", "C. Winston Churchill", "D. J. Nehru"]},
-    {q: "What is the key problem affecting India's progress?", opts: ["A. Lack of policies", "B. Lack of Teamwork", "C. Effective implementation", "D. None"]},
-    {q: "What does Sam Pitroda talk about?", opts: ["A. The Magic of Teamwork", "B. Crab mentality", "C. Bossism", "D. Workaholism"]},
-    {q: "Where are the workers placed in hierarchical structure?", opts: ["A. top", "B. bottom", "C. outside", "D. none"]},
-    {q: "What does Pitroda say about 'crab mentality'?", opts: ["A. pervades work ethics", "B. necessary", "C. antithetical to teamwork", "D. Both A & C"]},
-    {q: "The writer's attitude towards inefficient workers is —", opts: ["A. biased", "B. neutral", "C. difficult", "D. critical"]},
-    {q: "Criticizing someone in a group is —", opts: ["A. misunderstood", "B. a mistake", "C. prejudiced", "D. none"]},
-    {q: "Which statement is true?", opts: ["A. Disagreeing is new", "B. System averse to boss criticism", "C. Big company", "D. all"]},
-    {q: "In the writer's eyes, his driver deserved —", opts: ["A. promotion", "B. punishment", "C. praise", "D. none"]},
-    {q: "The writer believed in the concept of —", opts: ["A. motivation", "B. corporate world", "C. criticism", "D. retribution"]},
-    {q: "What matters most for a senior position?", opts: ["A. Age", "B. Capability and expertise", "C. Policy planning", "D. None"]},
-    {q: "How did author handle inefficient employees in C-Dot?", opts: ["A. suspension", "B. tell them directly to face", "C. demoting", "D. none"]},
-    {q: "Intention behind open criticism?", opts: ["A. benefit all/learn from mistake", "B. punish", "C. humiliation", "D. boss is right"]},
-    {q: "Reaction to group criticism?", opts: ["A. positive", "B. exit group", "C. personal criticism", "D. none"]},
-    {q: "Can employee criticize boss face to face in India?", opts: ["A. Yes", "B. No", "C. Can't say", "D. None"]},
-    {q: "What is that other snake which kills teamwork?", opts: ["A. consciousness", "B. Political agenda", "C. Hierarchical bossism", "D. none"]},
-    {q: "Why difficult to build teams in India?", opts: ["A. playing second fiddle issue", "B. low self-esteem", "C. crab mentality", "D. physical/mental worker diff"]},
-    {q: "Why did Japanese come to India?", opts: ["A. invest money", "B. set up units", "C. Maruti Suzuki car", "D. electronics"]},
-    {q: "Expression 'the crab mentality' mean?", opts: ["A. helping", "B. disturbing", "C. dominating", "D. dragging down"]},
-    {q: "Reaction if someone starts succeeding?", opts: ["A. support", "B. gang up to stop it", "C. angry", "D. secret plan"]},
-    {q: "What does 'hierarchical' mean?", opts: ["A. cultural", "B. graded order", "C. eldest share", "D. all equal"]},
-    {q: "Demerit of hierarchical system?", opts: ["A. junior exp", "B. junior ability", "C. respect to senior as 'best'", "D. ignore inefficient"]},
-    {q: "Senior executives congregated in US for Rockwell seminar for:", opts: ["A. framing policies", "B. strategic discussion", "C. hiring", "D. upgrading"]},
-    {q: "Group work always requires :", opts: ["A. co-ordination", "B. full agreement", "C. sharing ideas", "D. understanding strengths/weakness"]},
-    {q: "Effective teamwork learning:", opts: ["A. leadership power", "B. follow boss", "C. exercise and follow leadership simultaneously", "D. respect each player"]},
-    {q: "A good team player should have :", opts: ["A. resolve problems", "B. respect/tolerance/no egotism", "C. managing abilities", "D. management skills"]},
-    {q: "To begin a work, most important:", opts: ["A. agreed-upon aspects", "B. total agreement", "C. 2/3 majority", "D. consult everyone"]},
-    {q: "A good team player is :", opts: ["A. active/sincere", "B. open/clear/honest", "C. friendly", "D. dutiful"]},
-    {q: "What does 'a hidden agenda' mean?", opts: ["A. dishonesty", "B. secret", "C. same thing", "D. say one/mean opposite"]},
-    {q: "Writer's term for hidden agenda?", opts: ["A. negative", "B. split-level consciousness", "C. insincere", "D. feelings"]},
-    {q: "What does 'a good work ethic' imply?", opts: ["A. say/mean same thing", "B. mean opposite", "C. secretly", "D. outwardly open/inwardly self-motivated"]},
-    {q: "‘C-DOT’ stands for:", opts: ["A. Company", "B. Corporation", "C. Telecom Technology Development Centre", "D. Designing Centre"]}
-    // Adding placeholder entries to match indices for 58-67
-    ,{q: "Work Culture Question 58", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 59", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 60", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 61", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 62", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 63", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 64", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 65", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 66", opts:["A","B","C","D"]},
-    {q: "Work Culture Question 67", opts:["A","B","C","D"]}
+    {q: "If a superior has two subordinates what is total number of relations among them:", opts: ["A. 7", "B. 6", "C. 5", "D. 4"]},
+    {q: "Managerial functions are:", opts: ["A. inter-related", "B. not related to each other", "C. related with one and not others", "D. related for specific situation"]},
+    {q: "Which of these is not a function of management?", opts: ["A. planning", "B. coordinating", "C. organising", "D. controlling"]},
+    {q: "Planning involves:", opts: ["A. doing the present task", "B. analysing past performance", "C. deciding future course of actions", "D. making comparative study"]},
+    {q: "Capital structure decision is :", opts: ["A. long-range planning", "B. medium range planning", "C. short range planning", "D. operational planning"]},
+    {q: "The managerial function of identification and grouping of activities is known as :", opts: ["A. planning", "B. organising", "C. staffing", "D. directing"]},
+    {q: "Directing function of management involves:", opts: ["A. thinking ahead", "B. delegating authority", "C. manpower planning", "D. initiating action"]},
+    {q: "Formal relationship between the individual and departments is known as :", opts: ["A. organisational plan", "B. organisational budget", "C. organisational structure", "D. organisational relationship"]},
+    {q: "Exchange of thought, views and ideas is known as :", opts: ["A. planning", "B. exchanging", "C. directing", "D. communication"]},
+    {q: "Quantitative expression of business plans and programmes is known as :", opts: ["A. business planning", "B. budgeting", "C. scanning", "D. controlling"]},
+    {q: "Which function is considered as the essence of management?", opts: ["A. organising", "B. co-ordinating", "C. controlling", "D. planning"]},
+    {q: "Delegation of authority is an element of:", opts: ["A. organizing", "B. coordinating", "C. controlling", "D. staffing"]},
+    {q: "Policy making is an important part of:", opts: ["A. planning", "B. organizing", "C. coordinating", "D. motivating"]},
+    {q: "Which of the following is an example of informal group?", opts: ["A. business", "B. family", "C. hospital", "D. university"]},
+    {q: "Management means managing men:", opts: ["A. tactfully", "B. strictly", "C. carefully", "D. properly"]},
+    {q: "Managerial function of monitoring the work is known:", opts: ["A. planning", "B. organising", "C. staffing", "D. controlling"]},
+    {q: "Controlling is:", opts: ["A. looking ahead", "B. looking back", "C. delegation of authority", "D. guiding people"]},
+    {q: "Production planning and control purchasing, maintenance etc. are related to :", opts: ["A. manufacturing function", "B. ancillary function", "C. advisory function", "D. none of these"]},
+    {q: "Production planning is the function of :", opts: ["A. arranging various inputs", "B. looking ahead", "C. procuring of orders", "D. none of these"]},
+    {q: "Management is :", opts: ["A. An art", "B. A science", "C. Both art and science", "D. None of these"]},
+    {q: "Management is", opts: ["A. a pure science", "B. a pure art", "C. neither a pure science nor a pure art", "D. a social science with general features of science and art"]},
+    {q: "The system of management is essential in every:", opts: ["A. Government", "B. Business", "C. Organised group effort", "D. Formal group"]},
+    {q: "Management includes:", opts: ["A. four branches", "B. five branches", "C. six branches", "D. seven branches"]},
+    {q: "Management is :", opts: ["A. a science", "B. an art", "C. an art as well as science", "D. none of these"]},
+    {q: "Management is needed at:", opts: ["A. middle level", "B. top level", "C. operative level", "D. all level"]},
+    {q: "Which one is true?", opts: ["A. Management and administration are same", "B. Administration is higher than management", "C. Management is higher than administration", "D. All the above"]},
+    {q: "Owners, Board of Directors, Managing Director etc. are included under:", opts: ["A. middle management", "B. top management", "C. lower management", "D. all management"]},
+    {q: "Departmental managers, section officers etc. are included under:", opts: ["A. lower management", "B. top management", "C. middle management", "D. none of these"]},
+    {q: "Superintendents, foremen, supervisors etc. are included under:", opts: ["A. top management", "B. middle management", "C. lower management", "D. none of these"]},
+    {q: "Management as factor of production does not include:", opts: ["A. land", "B. drawings", "C. labour", "D. capital"]},
+    {q: "Management may be a :", opts: ["A. factor of production", "B. factor of consumption", "C. factor of saving", "D. factor of investment"]},
+    {q: "Because of application of fundamental principles, management is termed as :", opts: ["A. a science", "B. an art", "C. a profession", "D. a science as well as an art"]},
+    {q: "Management need creativity of the managers for which it is termed as :", opts: ["A. a science", "B. an art", "C. a science and an art", "D. a profession"]},
+    {q: "The planning function of management is performed by :", opts: ["A. lower management", "B. middle management", "C. top management", "D. all of these"]},
+    {q: "Management is :", opts: ["A. tangible", "B. intangible", "C. fictitious", "D. none of these"]},
+    {q: "Management is a :", opts: ["A. continuous process", "B. normal process", "C. universal process", "D. none of these"]},
+    {q: "Operational level of management consists of :", opts: ["A. functional manager", "B. foreman", "C. supervisors", "D. none of these"]},
+    {q: "Who is regarded as Father of Modern Management :", opts: ["A. Henry Fayal", "B. F. W. Taylor", "C. Phillip Kotler", "D. Clerk and Clark"]},
+    {q: "In an organisation, the most important element is :", opts: ["A. Task", "B. Cost", "C. People", "D. Time"]},
+    {q: "The following is not an objective of management:", opts: ["A. Earning profits", "B. Growth of the organisation", "C. Providing employment", "D. None of these"]},
+    {q: "Policy formulation is the function of :", opts: ["A. Top-level managers", "B. Middle-level managers", "C. Operational management", "D. All of these"]},
+    {q: "Coordination is :", opts: ["A. Function of management", "B. The essence of management", "C. An objective of management", "D. None of these"]},
+    {q: "Which of the following points supports the fact that 'Management is a profession'?", opts: ["A. Service motive", "B. Personalised application", "C. Principle based on experimentation", "D. Based on practice and creativity"]},
+    {q: "Which of the following functions is performed by the middle-level management ?", opts: ["A. Analysis of business environment", "B. Maintenance of quality output", "C. Formulation of organisational goals", "D. Interpretation of the policies framed by the top management"]},
+    {q: "Top-level management does not :", opts: ["A. control activities of all departments", "B. make sub-plans for the lower level", "C. determine objectives and policies", "D. establish contacts with outside world"]},
+    {q: "Planning is deciding in advance what to do, when to do it, and who is to do it. This has been described by", opts: ["A. Koontz and O'Donnell", "B. Hallmann", "C. Allen", "D. Terry"]},
+    {q: "Planning is a", opts: ["A. mental process", "B. physical process", "C. guess work process", "D. none of these"]},
+    {q: "Planning is the function of the", opts: ["A. manager", "B. accountant", "C. organisation", "D. none of these"]},
+    {q: "Any work without proper planning will create", opts: ["A. confusion", "B. doubts", "C. illusion", "D. all of these"]},
+    {q: "Planning is a", opts: ["A. continuous process", "B. intellectual process", "C. managerial efficiency", "D. all of these"]}
 ];
 
 function startExam(){
@@ -176,7 +156,7 @@ function submitExam(){
 
     alert(`Experiment Finished!\nScientist: ${studentName}\nScore: ${score}/${questionData.length}`);
 
-    let msg = `*Online Exam Result*%0A*Name:* ${studentName}%0A*Score:* ${score}/${questionData.length}%0A*Wrong Qs:* ${wrong.slice(0,10).join(",")}${wrong.length > 10 ? '...' : ''}`;
+    let msg = `*Online Exam Result*%0A*Name:* ${studentName}%0A*Score:* ${score}/${questionData.length}%0A*Wrong Qs:* ${wrong.slice(0,50).join(",")}${wrong.length > 10 ? '...' : ''}`;
     window.open("https://wa.me/918917694522?text=" + msg);
 }
 </script>
